@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.andanhm.quantitypickerdemo.MainActivity">
+
+    <com.andanhm.quantitypicker.QuantityPicker
+        xmlns:picker="http://schemas.android.com/apk/res-auto/"
+        android:id="@+id/quantityPicker"
+        picker:minQuantity="1"
+        picker:maxQuantity="5"
+        picker:quantityColor="@color/colorPrimary"
+        picker:buttonColor="@color/colorAccent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>
