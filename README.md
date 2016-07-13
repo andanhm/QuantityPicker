@@ -1,7 +1,5 @@
 # Quantity Picker v1.0.1
 
-![maven-central](https://img.shields.io/maven-central/v/com.andanhm.quantitypicker/library.svg)
-
 This is an Android library, I call it Quantity Picker. It's very easy to use.
  . I hope that you will like it, and enjoys it. ^ ^
 ### Screenshots
@@ -9,9 +7,7 @@ This is an Android library, I call it Quantity Picker. It's very easy to use.
 
 <img src="screenshots/picker.png" width="25%" />
 
-![maven-central](https://img.shields.io/maven-central/v/com.andanhm.quantitypicker/library.svg)
-
-**Maven**
+```Maven
 
 <dependency>
   <groupId>com.andanhm.quantitypicker</groupId>
@@ -19,8 +15,9 @@ This is an Android library, I call it Quantity Picker. It's very easy to use.
   <version>1.0.1</version>
   <type>pom</type>
 </dependency>
+```
 
-**Gradle**
+```Gradle
 
 repositories {
     maven {
@@ -31,7 +28,7 @@ repositories {
 dependencies {
     compile 'com.andanhm.quantitypicker:quantitypicker:1.0.1'
 }
-
+```
 If it doesn't work, please send me a email, andanhm3@gmail.com
 
 ####Or
