@@ -1,13 +1,85 @@
-# Quantity Picker
+# Quantity Picker v1.0.1
 
+![maven-central](https://img.shields.io/maven-central/v/com.andanhm.quantitypicker/library.svg)
+
+This is an Android library, I call it Quantity Picker. It's very easy to use.
+ . I hope that you will like it, and enjoys it. ^ ^
 ### Screenshots
 
 
 <img src="screenshots/picker.png" width="25%" />
 
+![maven-central](https://img.shields.io/maven-central/v/com.andanhm.quantitypicker/library.svg)
 
+**Maven**
+
+<dependency>
+  <groupId>com.andanhm.quantitypicker</groupId>
+  <artifactId>quantitypicker</artifactId>
+  <version>1.0.1</version>
+  <type>pom</type>
+</dependency>
+
+**Gradle**
+
+repositories {
+    maven {
+        url 'https://dl.bintray.com/andanhm3/maven'
+    }
+}
+
+dependencies {
+    compile 'com.andanhm.quantitypicker:quantitypicker:1.0.1'
+}
+
+If it doesn't work, please send me a email, andanhm3@gmail.com
+
+####Or
+
+Import the library, then add it to your `/settings.gradle` and `/app/build.gradle`
 ### License
 
+It's very easy, just like this:
+```xml
+    <com.andanhm.quantitypicker.QuantityPicker
+        xmlns:picker="http://schemas.android.com/apk/res-auto/"
+        android:id="@+id/quantityPicker"
+        picker:minQuantity="1"
+        picker:maxQuantity="5"
+        picker:quantityColor="@color/colorPrimary"
+        picker:buttonColor="@color/colorAccent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+```
+
+```java
+        QuantityPicker quantityPicker = (QuantityPicker) findViewById(R.id.quantityPicker);
+
+        //Returns the selected quantity
+        quantityPicker.getQuantity();
+
+        //Allows to set the minimum quantity
+        quantityPicker.setMinQuantity(1);
+
+        //Allows to set the maximum quantity
+        quantityPicker.setMaxQuantity(10);
+
+        //Enable/Disable quantity picker
+        quantityPicker.setQuantityPicker(true);
+
+        //To set the quantity text color
+        quantityPicker.setQuantityTextColor(R.color.colorPrimaryDark);
+
+        //To set the quantity button color
+        quantityPicker.setQuantityButtonColor(R.color.colorAccent);
+
+        // Returns the quantity on quantity selection
+        quantityPicker.setOnQuantityChangeListener(new QuantityPicker.OnQuantityChangeListener() {
+            @Override
+            public void onValueChanged(int quantity) {
+
+            }
+        });
 
 ```
 Copyright 2015 Google, Inc.

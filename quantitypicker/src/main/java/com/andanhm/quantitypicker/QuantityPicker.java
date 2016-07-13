@@ -32,7 +32,7 @@ public class QuantityPicker extends LinearLayout {
         LayoutInflater.from(context).inflate(R.layout.quntity_picker_layout, this);
     }
 
-    public OnQuantityChangeListener getOnQuantityChangeListener() {
+    private OnQuantityChangeListener getOnQuantityChangeListener() {
         return onQuantityChangeListener;
     }
 
@@ -69,7 +69,7 @@ public class QuantityPicker extends LinearLayout {
         try {
             minQuantity = typedValue.getInteger(R.styleable.QuantityPicker_minQuantity, 1);
             maxQuantity = typedValue.getInteger(R.styleable.QuantityPicker_maxQuantity, 5);
-            setButtonColor(typedValue.getColorStateList(R.styleable.QuantityPicker_buttonColor));
+            setQuantityButtonColor(typedValue.getColorStateList(R.styleable.QuantityPicker_buttonColor));
             setQuantityTextColor(typedValue.getColorStateList(R.styleable.QuantityPicker_quantityColor));
             setQuantityPicker(typedValue.getBoolean(R.styleable.QuantityPicker_enable, true));
             setTextSize(typedValue.getDimension(R.styleable.QuantityPicker_textSize, 20));
@@ -104,7 +104,7 @@ public class QuantityPicker extends LinearLayout {
         mTextViewQuantity.setTextColor(ContextCompat.getColor(mContext, Color.parseColor(colorSting)));
     }
 
-    public void setButtonColor(ColorStateList color) {
+    public void setQuantityButtonColor(ColorStateList color) {
         if (color!=null) {
             int _color = color.getColorForState(getDrawableState(), Color.BLACK);
             mImageDecrement.setColorFilter(_color);
@@ -112,12 +112,12 @@ public class QuantityPicker extends LinearLayout {
         }
     }
 
-    public void setButtonColor(@ColorRes int resId) {
+    public void setQuantityButtonColor(@ColorRes int resId) {
         mImageDecrement.setColorFilter(ContextCompat.getColor(mContext, resId));
         mImageIncrement.setColorFilter(ContextCompat.getColor(mContext, resId));
     }
 
-    public void setButtonColor(@NonNull String colorSting) {
+    public void setQuantityButtonColor(@NonNull String colorSting) {
         mImageDecrement.setColorFilter(ContextCompat.getColor(mContext, Color.parseColor(colorSting)));
         mImageIncrement.setColorFilter(ContextCompat.getColor(mContext, Color.parseColor(colorSting)));
     }
@@ -137,7 +137,7 @@ public class QuantityPicker extends LinearLayout {
             mTextViewQuantity.setText(String.valueOf(quantity));
     }
 
-    private void setMaxQuantity(int quantity) {
+    public void setMaxQuantity(int quantity) {
         this.maxQuantity = quantity;
     }
 

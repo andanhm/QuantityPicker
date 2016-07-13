@@ -9,8 +9,8 @@ android {
     defaultConfig {
         minSdkVersion 9
         targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
+        versionCode 1001
+        versionName "1.0.1"
     }
     buildTypes {
         release {
@@ -25,3 +25,48 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.4.0'
 }
 
+group = 'com.andanhm.quantitypicker'
+version = '1.0.1'
+
+task generateSourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier 'sources'
+}
+
+task generateJavaDocs(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath()
+            .join(File.pathSeparator))
+}
+
+task generateJavaDocsJar(type: Jar) {
+    from generateJavaDocs.destinationDir
+    classifier 'javadoc'
+}
+generateJavaDocsJar.dependsOn generateJavaDocs
+
+artifacts {
+    archives generateJavaDocsJar
+    archives generateSourcesJar
+}
+
+bintray {
+    user = 'andanhm3'
+    key = ''
+    pkg {
+        repo = 'maven'
+        name = 'com.andanhm.quantitypicker'
+
+        version {
+            name = '1.0.1-hm'
+            desc = 'Quantity Picker'
+            released  = new Date()
+            vcsTag = '1.0.1'
+        }
+
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/andanhm/QuantityPicker.git'
+        websiteUrl = 'https://github.com/andanhm/QuantityPicker'
+    }
+    configurations = ['archives']
+}

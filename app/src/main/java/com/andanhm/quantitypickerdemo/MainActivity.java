@@ -12,14 +12,32 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        QuantityPicker quantityPicker=(QuantityPicker)findViewById(R.id.quantityPicker);
-        if (quantityPicker != null) {
-            quantityPicker.setOnQuantityChangeListener(new QuantityPicker.OnQuantityChangeListener() {
-                @Override
-                public void onValueChanged(int quantity) {
-                    Toast.makeText(MainActivity.this,String.valueOf(quantity),Toast.LENGTH_SHORT).show();
-                }
-            });
-        }
+        QuantityPicker quantityPicker = (QuantityPicker) findViewById(R.id.quantityPicker);
+
+        //Returns the selected quantity
+        quantityPicker.getQuantity();
+
+        //Allows to set the minimum quantity
+        quantityPicker.setMinQuantity(1);
+
+        //Allows to set the maximum quantity
+        quantityPicker.setMaxQuantity(10);
+
+        //Enable/Disable quantity picker
+        quantityPicker.setQuantityPicker(true);
+
+        //To set the quantity text color
+        quantityPicker.setQuantityTextColor(R.color.colorPrimaryDark);
+
+        //To set the quantity button color
+        quantityPicker.setQuantityButtonColor(R.color.colorAccent);
+
+        quantityPicker.setOnQuantityChangeListener(new QuantityPicker.OnQuantityChangeListener() {
+            @Override
+            public void onValueChanged(int quantity) {
+                // Returns the quantity selected on quantity selection
+            }
+        });
+
     }
 }
