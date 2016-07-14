@@ -7,5 +7,6 @@
         <attr name="quantityColor" format="color"/>
         <attr name="buttonColor" format="color"/>
         <attr name="textSize" format="dimension"/>
+        <attr name="textStyle" format="string"/>
     </declare-styleable>
 </resources>

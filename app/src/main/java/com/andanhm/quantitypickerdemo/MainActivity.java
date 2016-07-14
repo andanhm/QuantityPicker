@@ -1,5 +1,6 @@
 package com.andanhm.quantitypickerdemo;
 
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -16,6 +17,9 @@ public class MainActivity extends AppCompatActivity {
 
         //Returns the selected quantity
         quantityPicker.getQuantity();
+
+        //Allows to set the text style quantity
+        quantityPicker.setTextStyle(QuantityPicker.BOLD);
 
         //Allows to set the minimum quantity
         quantityPicker.setMinQuantity(1);

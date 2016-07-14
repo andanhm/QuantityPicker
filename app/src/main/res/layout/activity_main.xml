@@ -8,14 +8,18 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.andanhm.quantitypickerdemo.MainActivity">
-
+    <TextView
+        android:textStyle="normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
     <com.andanhm.quantitypicker.QuantityPicker
-        xmlns:picker="http://schemas.android.com/apk/res-auto/"
+        xmlns:app="http://schemas.android.com/apk/res-auto/"
         android:id="@+id/quantityPicker"
-        picker:minQuantity="1"
-        picker:maxQuantity="5"
-        picker:quantityColor="@color/colorPrimary"
-        picker:buttonColor="@color/colorAccent"
+        app:minQuantity="1"
+        app:maxQuantity="5"
+        app:quantityColor="@color/colorPrimary"
+        app:buttonColor="@color/colorAccent"
+        app:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 </RelativeLayout>

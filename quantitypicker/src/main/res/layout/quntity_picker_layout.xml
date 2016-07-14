@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+    android:id="@+id/linearLayoutQuantityPicker"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:weightSum="3"
@@ -12,7 +13,8 @@
         android:src="@drawable/ic_add_circle_outline_black_24dp"
         android:layout_width="0dp"
         android:background="@android:color/transparent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/app_name" />
     <TextView
         android:layout_marginLeft="4dp"
         android:layout_marginStart="4dp"
@@ -28,5 +30,6 @@
         android:layout_weight="1"
         android:src="@drawable/ic_remove_circle_outline_black_24dp"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/app_name"/>
 </LinearLayout>

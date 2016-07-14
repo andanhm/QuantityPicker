@@ -4,13 +4,13 @@ apply plugin: 'com.github.dcendents.android-maven'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "24.0.0"
+    buildToolsVersion "23.0.3"
 
     defaultConfig {
         minSdkVersion 9
         targetSdkVersion 23
-        versionCode 1001
-        versionName "1.0.1"
+        versionCode 1002
+        versionName "1.0.2"
     }
     buildTypes {
         release {
@@ -26,11 +26,16 @@ dependencies {
 }
 
 group = 'com.andanhm.quantitypicker'
-version = '1.0.1'
+version = '1.0.2'
 
 task generateSourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
     classifier 'sources'
+}
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    failOnError false
 }
 
 task generateJavaDocs(type: Javadoc) {
@@ -48,25 +53,4 @@ generateJavaDocsJar.dependsOn generateJavaDocs
 artifacts {
     archives generateJavaDocsJar
     archives generateSourcesJar
-}
-
-bintray {
-    user = 'andanhm3'
-    key = ''
-    pkg {
-        repo = 'maven'
-        name = 'com.andanhm.quantitypicker'
-
-        version {
-            name = '1.0.1-hm'
-            desc = 'Quantity Picker'
-            released  = new Date()
-            vcsTag = '1.0.1'
-        }
-
-        licenses = ['Apache-2.0']
-        vcsUrl = 'https://github.com/andanhm/QuantityPicker.git'
-        websiteUrl = 'https://github.com/andanhm/QuantityPicker'
-    }
-    configurations = ['archives']
 }
