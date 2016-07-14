@@ -1,10 +1,10 @@
 # Quantity Picker v1.0.2
+[![Platform](http://img.shields.io/badge/platform-android-brightgreen.svg?style=flat)](http://developer.android.com/index.html) [![Language](http://img.shields.io/badge/language-java-orange.svg?style=flat)](http://www.oracle.com/technetwork/java/javase/downloads/index.html) [![License](http://img.shields.io/badge/license-apache2.0-lightgrey.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)
 
 The android library that provides a simple and similar to NumberPicker that can be used in shopping cart as a quantity picker. It's very easy to use.
  . I hope that you will like it, and enjoys it. ^ ^
 ### Screenshots
 
-[![Platform](http://img.shields.io/badge/platform-android-brightgreen.svg?style=flat)](http://developer.android.com/index.html) [![Language](http://img.shields.io/badge/language-java-orange.svg?style=flat)](http://www.oracle.com/technetwork/java/javase/downloads/index.html) [![License](http://img.shields.io/badge/license-apache2.0-lightgrey.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)
 <img src="screenshots/picker.png" width="25%" />
 
 ```Maven
@@ -57,12 +57,12 @@ add `xmlns:app="http://schemas.android.com/apk/res-auto"`
 
 |attribute name|attribute description|
 |:-:|:-:|
-|minQuantity|To set the minimum value of the quantity picker |(default Min Quantity : 1 )
-|maxQuantity|To set the maximum value of the quantity picker| (default Max Quantity : 10 )
+|minQuantity|To set the minimum value of the quantity picker (default Min Quantity : 1 )|
+|maxQuantity|To set the maximum value of the quantity picker (default Max Quantity : 10 )| 
 |quantityColor|To set the text color of the quantity picker|
 |buttonColor|To set the button color of the quantity picker|
 |textSize|To set the text size of the quantity picker|
-|textStyle|To set text style of the quantity picker|(bold,italic,bold_italic,normal)
+|textStyle|To set text style of the quantity picker (bold,italic,bold_italic,normal)|
 
 #### Java
 
