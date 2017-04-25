@@ -31,7 +31,7 @@ public class QuantityPicker extends LinearLayout {
     private Context mContext;
     private ImageButton mImageIncrement, mImageDecrement;
     private TextView mTextViewQuantity;
-    private int minQuantity = 1;
+    private int minQuantity = 0;
     private int maxQuantity = 50;
 
     private float mTextSize = 20f;
@@ -91,7 +91,7 @@ public class QuantityPicker extends LinearLayout {
         TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.QuantityPicker, 0, 0);
 
         try {
-            minQuantity = typedArray.getInteger(R.styleable.QuantityPicker_minQuantity, 1);
+            minQuantity = typedArray.getInteger(R.styleable.QuantityPicker_minQuantity, 0);
             maxQuantity = typedArray.getInteger(R.styleable.QuantityPicker_maxQuantity, 5);
             setQuantityButtonColor(typedArray.getColorStateList(R.styleable.QuantityPicker_buttonColor));
             setQuantityTextColor(typedArray.getColorStateList(R.styleable.QuantityPicker_quantityColor));
@@ -263,11 +263,11 @@ public class QuantityPicker extends LinearLayout {
             int quantity = getQuantity();
             int i = v.getId();
             if (i == R.id.imageButtonIncrement) {
-                if (minQuantity >= 1 && quantity < maxQuantity) {
+                if (minQuantity >= 0 && quantity < maxQuantity) {
                     setQuantitySelected(quantity + 1);
                 }
             } else if (i == R.id.imageButtonDecrement) {
-                if (minQuantity >= 1 && quantity <= maxQuantity) {
+                if (minQuantity >= 0 && quantity <= maxQuantity) {
                     setQuantitySelected(quantity - 1);
                 }
             }

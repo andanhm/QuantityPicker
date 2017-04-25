@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         quantityPicker.setTextStyle(QuantityPicker.BOLD);
 
         //Allows to set the minimum quantity
-        quantityPicker.setMinQuantity(1);
+        quantityPicker.setMinQuantity(0);
 
         //Allows to set the maximum quantity
         quantityPicker.setMaxQuantity(10);
