@@ -15,7 +15,7 @@
     <com.andanhm.quantitypicker.QuantityPicker
         xmlns:app="http://schemas.android.com/apk/res-auto/"
         android:id="@+id/quantityPicker"
-        app:minQuantity="1"
+        app:minQuantity="0"
         app:maxQuantity="5"
         app:quantityColor="@color/colorPrimary"
         app:buttonColor="@color/colorAccent"

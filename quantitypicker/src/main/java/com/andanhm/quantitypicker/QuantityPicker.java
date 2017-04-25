@@ -188,7 +188,7 @@ public class QuantityPicker extends LinearLayout {
     public void setQuantityTextColor(String colorSting) {
         if (colorSting==null)
             return;
-        mTextViewQuantity.setTextColor(ContextCompat.getColor(mContext, Color.parseColor(colorSting)));
+        mTextViewQuantity.setTextColor( Color.parseColor(colorSting));
     }
     /**
      * Sets the button color of the quantity picker
@@ -224,8 +224,8 @@ public class QuantityPicker extends LinearLayout {
     public void setQuantityButtonColor(String colorSting) {
         if (colorSting==null)
             return;
-        mImageDecrement.setColorFilter(ContextCompat.getColor(mContext, Color.parseColor(colorSting)));
-        mImageIncrement.setColorFilter(ContextCompat.getColor(mContext, Color.parseColor(colorSting)));
+        mImageDecrement.setColorFilter( Color.parseColor(colorSting));
+        mImageIncrement.setColorFilter(Color.parseColor(colorSting));
     }
     /**
      * @return  Return the quantity selected as a integer
@@ -244,8 +244,8 @@ public class QuantityPicker extends LinearLayout {
      * To set the quantity value to the quantity picker
      */
     private void setQuantitySelected(int quantity) {
-        if (quantity < 1)
-            mTextViewQuantity.setText("1");
+        if (quantity <= 0)
+            mTextViewQuantity.setText("0");
         else
             mTextViewQuantity.setText(String.valueOf(quantity));
     }

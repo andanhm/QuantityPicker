@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onValueChanged(int quantity) {
                 // Returns the quantity selected on quantity selection
+                Toast.makeText(getApplicationContext(),String.valueOf(quantity),Toast.LENGTH_SHORT).show();
             }
         });
 

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/QuantityPickerDemo.iml" filepath="$PROJECT_DIR$/QuantityPickerDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/QuantityPicker.iml" filepath="$PROJECT_DIR$/QuantityPicker.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/quantitypicker/quantitypicker.iml" filepath="$PROJECT_DIR$/quantitypicker/quantitypicker.iml" />
     </modules>
