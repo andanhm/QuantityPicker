@@ -9,8 +9,8 @@ android {
     defaultConfig {
         minSdkVersion 9
         targetSdkVersion 25
-        versionCode 1003
-        versionName "1.0.3"
+        versionCode 1004
+        versionName "1.1.0"
     }
     buildTypes {
         release {
@@ -23,37 +23,79 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:25.3.1'
+    compile "com.android.support:support-v4:25.3.1"
+
 }
 
 group = 'com.andanhm.quantitypicker'
-version = '1.0.3'
+version = '1.1.0'
 
-task generateSourcesJar(type: Jar) {
-    from android.sourceSets.main.java.srcDirs
-    classifier 'sources'
+allprojects {
+    repositories {
+        jcenter()
+    }
+    apply plugin: 'maven'
 }
+
+subprojects {
+    configurations {
+        published
+    }
+ }
+def siteUrl = 'https://github.com/andanhm/QuantityPicker'
+def gitUrl = 'https://github.com/andanhm/QuantityPicker.git'
+
+task writeNewPom {
+    pom {
+        project {
+            packaging 'aar'
+            groupId 'com.andanhm.quantitypicker'
+            artifactId 'quantitypicker'
+            name 'The android library that provides a simple and similar to NumberPicker that can be used in shopping cart as a quantity picker.'
+            url siteUrl
+
+            licenses {
+                license {
+                    name 'The Apache Software License, Version 2.0'
+                    url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                }
+            }
+            developers {
+                developer {
+                    id 'andanhm3'
+                    name 'Andan H M'
+                    email 'andanhm3@gmail.com'
+                }
+            }
+            scm {
+                connection gitUrl
+                developerConnection gitUrl
+                url siteUrl
+
+            }
+        }
+    }.writeTo("$buildDir/poms/pom-default.xml")
+}
+
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
 task javadoc(type: Javadoc) {
     source = android.sourceSets.main.java.srcDirs
     classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-    failOnError false
 }
 
-task generateJavaDocs(type: Javadoc) {
-    source = android.sourceSets.main.java.srcDirs
-    classpath += project.files(android.getBootClasspath()
-            .join(File.pathSeparator))
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
 }
-
-task generateJavaDocsJar(type: Jar) {
-    from generateJavaDocs.destinationDir
-    classifier 'javadoc'
-}
-generateJavaDocsJar.dependsOn generateJavaDocs
-
 artifacts {
-    archives generateJavaDocsJar
-    archives generateSourcesJar
+    archives javadocJar
+    archives sourcesJar
 }
+
 // Bintray
 Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
@@ -61,16 +103,24 @@ properties.load(project.rootProject.file('local.properties').newDataInputStream(
 bintray {
     user = properties.getProperty("bintray.user")
     key = properties.getProperty("bintray.apikey")
-
-    configurations = ['archives']
+    filesSpec {
+        from 'build/libs'
+        into '.'
+    }
     pkg {
         repo = 'maven'
         name = 'com.andanhm.quantitypicker'
-        desc = 'The android library that provides a simple and similar to NumberPicker that can be used in shopping cart as a quantity picker.' // YOUR LIBRARY DESCRIPTION
+        desc = 'The android library that provides a simple and similar to NumberPicker that can be used in shopping cart as a quantity picker.'
+        licenses = ['Apache-2.0']
         websiteUrl = 'https://github.com/andanhm/QuantityPicker'
         vcsUrl = 'https://github.com/andanhm/QuantityPicker.git'
-        licenses = ["Apache-2.0"]
-        publish = true
+        labels = ['QuantityPicker', 'Shopping']
         publicDownloadNumbers = true
+        version {
+            name = '1.1.0-hm'
+            desc = 'Minimum quantity by default set to zero'
+            vcsTag = '1.1.0'
+            configurations = ['archives']
+        }
     }
 }
