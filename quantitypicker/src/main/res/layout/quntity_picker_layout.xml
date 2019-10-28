@@ -1,33 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/linearLayoutQuantityPicker"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
-    android:weightSum="7"
-    android:gravity="center"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:weightSum="7">
+
+    <ImageButton
+        android:id="@+id/imageButtonDecrement"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_remove_circle_outline_black_24dp" />
+
+    <TextView
+        android:id="@+id/textViewQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:layout_weight="1"
+        android:textAlignment="center" />
+
+
     <ImageButton
         android:id="@+id/imageButtonIncrement"
-        android:layout_weight="3"
-        android:src="@drawable/ic_add_circle_outline_black_24dp"
-        android:layout_width="0dp"
-        android:background="@android:color/transparent"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/app_name" />
-    <TextView
-        android:layout_margin="6dp"
-        android:id="@+id/textViewQuantity"
-        android:layout_weight="1"
-        android:textAlignment="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <ImageButton
-        android:background="@android:color/transparent"
-        android:id="@+id/imageButtonDecrement"
-        android:layout_weight="3"
-        android:src="@drawable/ic_remove_circle_outline_black_24dp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/app_name"/>
+        android:layout_weight="3"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_add_circle_outline_black_24dp" />
 </LinearLayout>
