@@ -1,9 +1,9 @@
 package com.andanhm.quantitypickerdemo;
 
-import android.graphics.Typeface;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.andanhm.quantitypicker.QuantityPicker;
 
@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        QuantityPicker quantityPicker = (QuantityPicker) findViewById(R.id.quantityPicker);
+        QuantityPicker quantityPicker = findViewById(R.id.quantityPicker);
 
         //Returns the selected quantity
         quantityPicker.getQuantity();

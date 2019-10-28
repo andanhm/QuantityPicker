@@ -9,6 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.andanhm.quantitypickerdemo.MainActivity">
+
     <com.andanhm.quantitypicker.QuantityPicker
         android:id="@+id/quantityPicker"
         app:minQuantity="0"

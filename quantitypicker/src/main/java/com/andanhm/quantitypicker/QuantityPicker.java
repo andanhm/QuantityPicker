@@ -5,13 +5,14 @@ import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.core.content.ContextCompat;
 
 /**
  * <h1>QuantityPicker</h1>
@@ -83,11 +84,11 @@ public class QuantityPicker extends LinearLayout {
 
         this.mContext = context;
         LayoutInflater.from(mContext).inflate(R.layout.quntity_picker_layout, this);
-        mImageIncrement = (ImageButton) this.findViewById(R.id.imageButtonIncrement);
+        mImageIncrement = this.findViewById(R.id.imageButtonIncrement);
         mImageIncrement.setOnClickListener(clickListener);
-        mImageDecrement = (ImageButton) this.findViewById(R.id.imageButtonDecrement);
+        mImageDecrement = this.findViewById(R.id.imageButtonDecrement);
         mImageDecrement.setOnClickListener(clickListener);
-        mTextViewQuantity = (TextView) this.findViewById(R.id.textViewQuantity);
+        mTextViewQuantity = this.findViewById(R.id.textViewQuantity);
         TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.QuantityPicker, 0, 0);
 
         try {
